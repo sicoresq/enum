@@ -1,4 +1,6 @@
 {
+  "name": "sicoresq/enum",
+  "description": "Class emulating enum type",
   "license": "MIT",
   "version": "1.0.0",
   "require": {
