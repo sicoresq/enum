@@ -64,11 +64,11 @@ abstract class Enum implements JsonSerializable
         $availableValues = static::getConstList();
 
         if (!is_scalar($value)) {
-            throw new UnexpectedValueException(sprintf('Unexpected value type: %s', gettype($value)));
+            throw new UnexpectedValueException(sprintf('Unexpected value type: "%s" for enum %s', gettype($value), static::class));
         }
 
         if (!in_array($value, $availableValues, true)) {
-            throw new UnexpectedValueException(sprintf('Unexpected value: %s for class %s', $value, static::class));
+            throw new UnexpectedValueException(sprintf('Unexpected value: "%s" for enum %s', $value, static::class));
         }
 
         $this->value = $value;
