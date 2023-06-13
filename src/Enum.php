@@ -17,6 +17,16 @@ abstract class Enum implements JsonSerializable
 
     private static $constList;
 
+    public static function tryFrom($value): ?self
+    {
+        return static::hasValue($value) ? new static($value) : null;
+    }
+
+    public static function from($value): self
+    {
+        return new static($value);
+    }
+
     public static function hasValue($value): bool
     {
         $availableValues = static::getConstList();
