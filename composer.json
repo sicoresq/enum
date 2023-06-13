@@ -3,7 +3,7 @@
   "description": "Class emulating enum type",
   "license": "MIT",
   "require": {
-    "php": "^7.1|^8.0|^8.1",
+    "php": "^8.0|^8.1|^8.2",
     "ext-json": "*"
   },
   "require-dev": {
