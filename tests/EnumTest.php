@@ -83,6 +83,16 @@ final class EnumTest extends TestCase
         $this->expectException(UnexpectedValueException::class);
         EnumStub::from('invalid');
     }
+
+    public function testEquals()
+    {
+        $this->assertTrue(EnumStub::E1()->equals(EnumStub::E1()));
+        $this->assertTrue(EnumStub::E1()->equals(EnumStub::E1));
+        $this->assertTrue(EnumStub::E3()->equals(EnumStub::E3()));
+        $this->assertTrue(EnumStub::E3()->equals(EnumStub::E3));
+        $this->assertFalse(EnumStub::E1()->equals(EnumStub::E2()));
+        $this->assertFalse(EnumStub::E1()->equals(EnumStub::E2));
+    }
 }
 
 /**
