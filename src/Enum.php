@@ -89,9 +89,14 @@ abstract class Enum implements JsonSerializable
         return $this->value;
     }
 
-    public function equals($other): bool
+    public function equals(...$anyOther): bool
     {
-        return (string)$this === (string)$other;
+        foreach ($anyOther as $other) {
+            if ((string)$this === (string)$other) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public function __toString(): string

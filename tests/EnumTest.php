@@ -92,6 +92,14 @@ final class EnumTest extends TestCase
         $this->assertTrue(EnumStub::E3()->equals(EnumStub::E3));
         $this->assertFalse(EnumStub::E1()->equals(EnumStub::E2()));
         $this->assertFalse(EnumStub::E1()->equals(EnumStub::E2));
+
+        $this->assertTrue(
+            EnumStub::E3()->equals(
+                EnumStub::E3,
+                EnumStub::E2,
+                EnumStub::E1,
+            )
+        );
     }
 }
 
