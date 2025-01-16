@@ -35,7 +35,7 @@ abstract class Enum implements JsonSerializable
     }
 
     /**
-     * @return Enum[]
+     * @return static[]
      */
     public static function getAll(): array
     {
