@@ -19,6 +19,9 @@ abstract class Enum implements JsonSerializable
 
     public static function tryFrom($value): ?static
     {
+        if ($value instanceof static) {
+            return $value;
+        }
         return static::hasValue($value) ? new static($value) : null;
     }
 
