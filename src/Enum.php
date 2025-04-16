@@ -27,6 +27,9 @@ abstract class Enum implements JsonSerializable
 
     public static function from($value): static
     {
+        if ($value instanceof static) {
+            return $value;
+        }
         return new static($value);
     }
 

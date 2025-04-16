@@ -80,6 +80,7 @@ final class EnumTest extends TestCase
     public function testFrom()
     {
         $this->assertInstanceOf(EnumStub::class, EnumStub::from(EnumStub::E1));
+        $this->assertInstanceOf(EnumStub::class, EnumStub::from(EnumStub::E1()));
 
         $this->expectException(UnexpectedValueException::class);
         EnumStub::from('invalid');
